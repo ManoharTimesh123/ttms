@@ -1,0 +1,10 @@
+/* CSS to be added for the plugin */
+
+.iconsmall {
+    margin-left: 10px;
+}
+
+#page-local-modality-index .singlebutton.m-0{
+    float: right;
+    padding: 8px;
+}

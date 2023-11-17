@@ -1,0 +1,90 @@
+<!-- INTG Customziation : Added class position-relative -->
+<footer class="position-relative">
+<!-- INTG Customziation : Added class pt-4 -->
+  <div class="container pt-4">
+  
+    <div class="row">
+      <div class="offset-md-1 col-md-3">
+        <!-- INTG Customziation : Two images added -->
+        <img src="/theme/edumy/pix/girls-reading.svg" class="girls-reading" alt=" ">
+        <img src="/theme/edumy/pix/frame-yellow-arrow.svg" class="frame-yellow-arrow d-table ml-auto" alt=" ">
+      </div>
+    </div>
+    <!-- INTG Customziation : Added class pt-5 -->
+    <div class="row pt-5">
+      <div class="offset-md-1 col-md-3">        
+        {{{ footer_col_1_body }}}
+      </div>
+      <!-- INTG Customziation : Added two div -->
+      <div class="col-md-4">
+        <div class="row">
+          <!-- INTG Customziation : Replace class col-md-2 to col-6 and added class pl-5 -->
+          <div class="col-4 pl-3">
+            <!-- INTG Customziation : Tag change h3 to h4 and classes add added classes font-weight-bold mb-2 -->
+            <h4 class="font-weight-bold mb-2">{{{ footer_col_3_title }}}</h4>
+              {{{ footer_col_3_body }}} 
+          </div>
+          <!-- INTG Customziation : Replace class col-md-2 to col-6 and added class pl-5 -->
+          <div class="col-7">
+            <!-- INTG Customziation : Tag change h3 to h4 and classes add added classes font-weight-bold mb-2 -->
+            <h4 class="font-weight-bold mb-2">{{{ footer_col_4_title }}}</h4>
+            <!-- INTG Customziation : showing latest courses -->
+            {{{ footer_col_4_body }}}
+             <!-- INTG Customization End -->
+          </div>
+        </div>
+      </div>
+      <!-- INTG Customziation : Added class pb-3 -->
+      <div class="col-md-3">
+        <!-- INTG Customziation : Tag change h3 to h4 and classes add added classes font-weight-bold mb-2 -->
+        <h4 class="font-weight-bold mb-2">Your query</h4>
+        <!-- INTG Customziation : Added classes mb-3 p-2 rounded -->
+       <!-- <div class="enquery-box mb-3">
+          <textarea rows="4" cols="50" class="border-0 p-2 rounded w-100" placeholder="Type here query*"></textarea>
+        </div> -->
+        <!-- INTG Customziation : Added classes btn-primary rounded-pill -->
+        <!-- <a href="" class="submit-btn btn-primary rounded-pill"> Submit </a> -->
+        <!-- INTG Customziation : user query form -->
+         {{{ footer_user_query }}}
+        
+      </div>      
+    </div>
+
+    <div class="row">
+      <div class="offset-md-1 col-md-3">
+        {{#footer_column_1}}
+          <div class="pl-2">
+            <!-- INTG Customziation : Tag change h3 to h4 and added classes font-weight-bold mb-2 -->
+            <h4 class="font-weight-bold mb-2">{{{ footer_col_2_title }}}</h4>
+            {{#logo_image_footer}} <img class="img-fluid mb-3" src="{{{footerlogo1}}}" alt="{{ sitename }}" {{#logo_styles_footer}} style="{{{logo_styles_footer}}}" {{/logo_styles_footer}}>{{/logo_image_footer}}
+            {{#logotype_footer}}{{/logotype_footer}}
+            {{{ footer_col_2_body }}}            
+          </div>
+        {{/footer_column_1}}
+      </div>
+      <div class="offset-md-4 col-md-4">
+        <div class="footer-social-icons align-items-center d-flex h-100">
+              <!-- INTG Customziation : Added class m-0 -->
+              <ul class="m-0">
+                {{> theme_edumy/ccn_social_icons }}
+              </ul>
+            </div>
+      </div>
+    </div>
+  </div>
+
+  {{#cocoon_copyright}}
+    <section class="footer_bottom_area pt25 pb25">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 offset-lg-3">
+            <div class="copyright-widget text-center">
+              <p>{{{ cocoon_copyright }}} patel</p>
+              <div class="tool_usertours-resettourcontainer"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  {{/cocoon_copyright}}
+</footer>

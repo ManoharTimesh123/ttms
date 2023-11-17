@@ -1,0 +1,1463 @@
+// Custom css rules for Theme
+body {
+  background: url(/theme/edumy/pix/bg-image-teacher.png) repeat;
+  font-size: 14px;
+  color: $gray-900;
+  &.lockscroll {
+    overflow-y: auto;
+  }
+}
+header.ccnHeader1.header-nav.menu_style_home_one.navbar-scrolltofixed.stricky.main-menu.slideIn.animated.scroll-to-fixed-fixed {
+  background-color: rgba($color: $black, $alpha: 0.44);
+}
+p {
+  font-size: 14px;
+}
+.btn-primary {
+  background-color: $red-500 !important;
+  border: none !important;
+  padding: 10px 12px !important;
+  &:hover {
+    background-color: $red-600 !important;
+    color: $white !important;
+  }
+  &:focus {
+    box-shadow: none;
+    outline: none;
+  }
+}
+.btn-secondary {
+  padding: 10px 12px !important;
+  background: $blue-900 !important;
+  border: none !important;
+  &:hover,
+  &:focus {
+    background-color: $blue !important;
+    color: $white !important;
+    box-shadow: none;
+    outline: none;
+  }
+}
+.cursor-auto {
+  cursor: auto !important;
+}
+.badge,
+.badge-pill {
+  font-weight: 600;
+}
+.box-shadow {
+  box-shadow: 0px 4px 8px rgba($color: $black, $alpha: 0.1);
+}
+.text-light-blue {
+  color: $cyan-500 !important;
+}
+.white {
+  background: $white;
+}
+.top_courses:not(.list) .tc_footer {
+  position: relative !important;
+  height: auto !important;
+}
+section.footer_middle_area.p0 {
+  display: none;
+}
+
+// Testimonials.
+.hometesti {
+  background-color: $white;
+  &::before,
+  &::after {
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 72%;
+    background-image: radial-gradient(
+      rgba($color: $red-500, $alpha: 0.15),
+      rgba($color: $red-500, $alpha: 0.15),
+      $white,
+      $white
+    );
+  }
+  &::before {
+    left: -25%;
+  }
+  &::after {
+    right: -25%;
+    bottom: 0;
+  }
+  .ccnTestimonials2-section {
+    background-color: transparent !important;
+    z-index: 1;
+    .row {
+      &:last-child {
+        background-image: url(/theme/edumy/pix/participants_testimonials/testimonial-bg.png) !important;
+        background-repeat: no-repeat;
+        background-position: center 55%;
+        background-size: contain;
+      }
+    }
+    .main-title {
+      margin-bottom: 0;
+      h3 {
+        font-size: 45px;
+        line-height: 60px;
+        em {
+          color: $red-500;
+          font-style: normal;
+        }
+      }
+      p {
+        font-size: 16px;
+      }
+    }
+    .owl-carousel {
+      .owl-stage {
+        .owl-item {
+          margin-top: 105px;
+          .testimonial_item.home2.ccnTestimonials2 {
+            opacity: 1;
+            .details {
+              min-height: 220px;
+              padding: 30px 35px;
+              p {
+                font-size: 14px;
+                line-height: 20px;
+                margin-top: 0;
+                position: relative;
+                color: $gray-600;
+                &::before,
+                &::after {
+                  font: normal normal normal 6px/1 FontAwesome;
+                  top: -7px;
+                  position: relative;
+                }
+                &::before {
+                  content: "\f10d";
+                }
+                &::after {
+                  content: "\f10e";
+                }
+                span {
+                  font-size: 8px;
+                  &::before {
+                    top: 2px;
+                    position: absolute;
+                  }
+                }
+              }
+              .ccn-img-round {
+                height: 50px;
+                width: 50px;
+                min-width: 50px;
+                min-height: 50px;
+                border-radius: 100px;
+                img {
+                  object-fit: cover;
+                  height: 100%;
+                  width: 100%;
+                }
+              }
+              .ccnTestTitleBox {
+                padding-top: 0;
+                .subtitle {
+                  color: $gray-600;
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+        }
+        .owl-item.active.center {
+          .testimonial_item.home2.ccnTestimonials2 {
+            .details {
+              background: $red-500 !important;
+              min-height: 300px;
+              margin-top: -40px;
+              p {
+                font-size: 16px;
+                line-height: 30px;
+              }
+              .title,
+              .subtitle,
+              p {
+                color: $white;
+              }
+              .ccn-img-round {
+                height: 80px;
+                width: 80px;
+              }
+            }
+          }
+        }
+      }
+      .owl-controls {
+        .owl-dots {
+          .active {
+            span {
+              background-color: $blue-900;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// home banner.
+.h_banner {
+  .home14-slider {
+    .banner-style-one {
+      .banner-title {
+        color: $orange-500 !important;
+        font-weight: 900;
+        font-size: 56px;
+      }
+      .banner-sub-title {
+        font-weight: 900;
+        font-size: 56px;
+      }
+      .slide.home14 {
+        &::before {
+          background: transparent;
+        }
+      }
+      .slide {
+        padding: 250px 0 290px;
+        background-size: 100% 100%;
+      }
+    }
+  }
+}
+
+// Top Rating Instructors.
+.view-teacher {
+  background: url(/theme/edumy/pix/bg-image-teacher.png) repeat;
+  h2 {
+    font-size: 45px;
+    color: $red-600;
+  }
+  .user-img {
+    height: 60px;
+    width: 60px;
+    border: 3px solid $gray-200;
+    object-fit: cover;
+  }
+  .flip-container-box {
+    .overlay {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      transition: 0.5s ease;
+    }
+    &:hover {
+      .overlay {
+        opacity: 1;
+      }
+    }
+  }
+  .flip-wrapper {
+    &:nth-child(even) {
+      .overlay {
+        background-color: $pink-500;
+        .overflow-auto {
+          max-height: 196px;
+        }
+      }
+    }
+    &:nth-child(odd) {
+      .overlay {
+        background-color: $blue;
+      }
+    }
+  }
+}
+
+// View Leading.
+.view-leading-discovery {
+  h2 {
+    font-size: 44px;
+    color: $black;
+    line-height: 50px;
+    span {
+      color: $red-500;
+    }
+  }
+  .flip-container {
+    perspective: 1000;
+    min-height: 332px;
+    &:hover {
+      .flipper {
+        transform: rotateY(180deg);
+      }
+      .front {
+        opacity: 0;
+      }
+    }
+    .flipper {
+      transition: 0.6s;
+      transform-style: preserve-3d;
+      position: relative;
+      max-width: 212px;
+      margin: 0 auto;
+      .front,
+      .back {
+        backface-visibility: hidden;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        text-align: center;
+        width: 100%;
+        min-height: 332px;
+        transition: all 0.3s ease-in-out;
+        p {
+          max-height: 200px;
+          overflow: auto;
+        }
+      }
+      .front {
+        padding: 10px;
+        &::before {
+          content: "";
+          border-radius: 32px;
+          transform: rotate(-10deg) skew(0deg, -10deg);
+          width: 100%;
+          left: 0;
+          position: absolute;
+          height: 100%;
+          box-shadow: 0 4px 8px rgba($color: $black, $alpha: 0.1);
+        }
+        &::after {
+          content: "";
+          border-radius: 32px;
+          background: $white;
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          right: 10px;
+          bottom: 10px;
+          transform: rotate(354deg) skew(353deg, 360deg);
+          box-shadow: 0 4px 8px rgba($color: $black, $alpha: 0.1);
+        }
+        h4,
+        img {
+          z-index: 1;
+        }
+      }
+      .back {
+        padding: 10px 40px;
+        transform: rotateY(180deg);
+        position: relative;
+        z-index: 1;
+        &::before {
+          content: "";
+          position: absolute;
+          height: 100%;
+          background: $white;
+          border-radius: 32px;
+          left: 0;
+          width: 100%;
+          transform: rotate(0deg);
+          box-shadow: 0 4px 8px rgba($color: $black, $alpha: 0.1);
+        }
+        &::after {
+          content: "";
+          border-radius: 32px;
+          transform: rotate(16deg) skew(10deg, 10deg);
+          position: absolute;
+          top: 10px;
+          bottom: 10px;
+          left: 10px;
+          right: 10px;
+        }
+        a,
+        p {
+          z-index: 1;
+        }
+        a {
+          margin: 0 auto;
+        }
+      }
+    }
+    .one {
+      .front {
+        &::before {
+          background: $blue;
+        }
+      }
+      .back {
+        &::after {
+          background: $blue;
+        }
+        a {
+          color: $blue;
+        }
+      }
+    }
+    .two {
+      .front {
+        &::before {
+          background: $pink-500;
+        }
+      }
+      .back {
+        &::after {
+          background: $pink-500;
+        }
+        a {
+          color: $pink-500;
+        }
+      }
+    }
+    .three {
+      .front {
+        &::before {
+          background: $yellow-600;
+        }
+      }
+      .back {
+        &::after {
+          background: $yellow-600;
+        }
+        a {
+          color: $yellow-600;
+        }
+      }
+    }
+    .four {
+      .front {
+        &::before {
+          background: $cyan-500;
+        }
+      }
+      .back {
+        &::after {
+          background: $cyan-500;
+        }
+        a {
+          color: $cyan-500;
+        }
+      }
+    }
+  }
+}
+
+// Popular online course.
+.block_courses_popular_slider {
+  .title {
+    display: none;
+  }
+}
+.Popular-Online-Course {
+  background: $white url(/theme/edumy/pix/onlinecourse-bg-img.png) no-repeat;
+  padding: 55px 0;
+  h2 {
+    font-size: 45px;
+    line-height: 60px;
+    em {
+      color: $red-500;
+      font-style: normal;
+      display: block;
+    }
+  }
+  .flip-card {
+    min-height: 360px;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    .flip-card-front,
+    .flip-card-back {
+      backface-visibility: hidden;
+      width: 96.5%;
+      margin: 0 3px 38px;
+      min-height: 320px;
+    }
+    .flip-card-front {
+      img {
+        height: 150px !important;
+        border-radius: 10px;
+      }
+      span {
+        top: 16px;
+        left: 16px;
+        background: rgba($color: $white, $alpha: 0.7);
+      }
+      i {
+        color: $yellow-600;
+        font-size: 12px;
+        &.light {
+          color: rgba($color: $yellow-600, $alpha: 0.33);
+        }
+      }
+      h4 {
+        color: $gray-500;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 27px;
+        i {
+          color: $gray-900;
+        }
+      }
+      ul {
+        margin: 0;
+        li {
+          margin-bottom: 8px;
+          margin-right: 0;
+        }
+      }
+      h5 {
+        font-size: 17px;
+        font-weight: bold;
+        margin: 10px 0;
+        color: $gray-900;
+      }
+    }
+    .flip-card-back {
+      background-color: $cyan-500;
+      transform: rotateY(180deg);
+      div {
+        max-height: 265px;
+      }
+      a {
+        &.join-btn {
+          bottom: 9px;
+          left: 0;
+          right: 0;
+        }
+      }
+    }
+    .join-btn {
+      background: $cyan-500;
+      margin: 0 auto;
+      max-width: 150px;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    &:hover {
+      box-shadow: none !important;
+      transform: rotateY(180deg);
+    }
+  }
+  .owl-carousel.owl-theme.owl-loaded {
+    .owl-prev,
+    .owl-next {
+      position: initial;
+      text-align: center;
+      &:hover {
+        background-color: $red-500 !important;
+      }
+    }
+    .owl-dots,
+    .owl-nav {
+      text-align: right !important;
+      -webkit-tap-highlight-color: transparent;
+    }
+  }
+}
+
+// Popular gallary.
+.section-gallary {
+  background: url(/theme/edumy/pix/image_gallery/gallery-bg.jpg) no-repeat;
+  padding: 55px 0 150px 0;
+  overflow: hidden;
+  background-size: cover;
+  h2 {
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 60px;
+    color: $white;
+    position: relative;
+    &::before {
+      position: absolute;
+      content: "";
+      background: rgba($color: $black, $alpha: 0.4);
+      width: 650px;
+      height: 650px;
+      z-index: 0;
+      transform: rotate(45deg);
+      left: -140%;
+      top: -191%;
+    }
+    span {
+      position: relative;
+      display: block;
+      margin-top: 59%;
+      em {
+        color: $red-500;
+        font-style: normal;
+      }
+    }
+  }
+  .image-outer {
+    position: relative;
+    flex-grow: 1;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 2vmin;
+    justify-items: center;
+    align-items: center;
+    .items-first {
+      z-index: 1;
+      grid-column: span 2;
+      width: 210px;
+      margin-bottom: -40%;
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      transition: all 0.25s;
+      height: 210px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: $white;
+      &:nth-child(5n + 1) {
+        grid-column: 2 / span 2;
+      }
+      &:nth-child(4) {
+        grid-column: 3 / span 2;
+      }
+      &:hover {
+        z-index: 2;
+        transform: scale(2);
+      }
+      p {
+        position: absolute;
+        z-index: 100;
+        width: 145px;
+        font-size: 12px;
+        margin-bottom: 0;
+        color: $white;
+        top: 78px;
+        left: 35px;
+        line-height: 16px;
+      }
+      .items-first-border {
+        width: 204px;
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        height: 204px;
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 991.98px) {
+  .section-gallary {
+    padding: 50px 0 90px 0;
+    h2 {
+      &::before {
+        content: none;
+      }
+      span {
+        margin-top: auto;
+      }
+    }
+    .image-outer {
+      .items-first {
+        height: 90px;
+        width: 90px;
+        .items-first-border {
+          width: 85px;
+          height: 85px;
+        }
+      }
+    }
+  }
+}
+
+// Feature course.
+.featured-wrap {
+  position: relative;
+  background-color: $white;
+  overflow: hidden;
+  &::before,
+  &::after {
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 72%;
+    background-image: radial-gradient(
+      rgba($color: $red-500, $alpha: 0.15),
+      rgba($color: $red-500, $alpha: 0.15),
+      $white,
+      $white
+    );
+  }
+  &::before {
+    left: -25%;
+    top: -15%;
+  }
+  &::after {
+    right: -25%;
+    bottom: 0;
+  }
+  ul.featured-tab {
+    max-height: 595px;
+    z-index: 2;
+    li {
+      color: $blue-900;
+      left: 1px;
+      height: 86px;
+      margin-bottom: 70px;
+      cursor: pointer;
+      .tab-txt {
+        font-weight: 400;
+        font-size: 22px;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        width: 85%;
+        height: 84px;
+        background: $white;
+        border-radius: 8px;
+        left: 0;
+        top: 0;
+      }
+      &.active {
+        background-color: $white;
+        border: 1px solid $red-500;
+        border-radius: 8px 0 0 8px;
+        border-right: 0;
+        color: $red-500;
+        i {
+          color: $red-500;
+        }
+        .tab-txt {
+          font-weight: 700;
+        }
+      }
+      .tab-txt {
+        font-weight: 700;
+      }
+    }
+    i {
+      font-size: 30px;
+      color: $gray-600;
+      vertical-align: middle;
+    }
+    &:hover {
+      &::before {
+        box-shadow: none;
+      }
+    }
+    &.active {
+      &::before {
+        box-shadow: none;
+      }
+    }
+  }
+}
+.feature-work-area {
+  border: 1px solid $red-500;
+  z-index: 1;
+  .top-area {
+    p {
+      font-weight: 400;
+      font-size: 22px;
+      color: $green-900;
+    }
+    img {
+      position: absolute;
+      top: -10px;
+      right: 6%;
+    }
+  }
+  .content-area {
+    min-height: 340px;
+    opacity: 0.5;
+    img {
+      max-height: 181px;
+      opacity: 0.7;
+    }
+  }
+  h2 {
+    span {
+      color: $red-500;
+      font-size: 30px;
+      font-weight: 700;
+    }
+  }
+  .course-box {
+    display: none;
+    .box1 {
+      &:nth-child(even) {
+        .enrol_btn_text {
+          background-color: $pink-500;
+        }
+      }
+      &:nth-child(odd) {
+        .enrol_btn_text {
+          background-color: $purpal;
+        }
+      }
+    }
+    .tooltip-content {
+      background: $purpal;
+      position: absolute;
+      transition: all 0.15s ease;
+      display: none;
+      right: -260px;
+      z-index: 1;
+    }
+    .tooltip-hover {
+      &:hover {
+        .tooltip-content {
+          margin-right: -50px;
+          display: block;
+          .tooltip-content-inner {
+            max-height: 140px;
+            overflow-y: auto;
+            overflow-x: hidden;
+          }
+        }
+      }
+      .tooltip-content:before {
+        border: 8px solid transparent;
+        border-bottom-color: $purpal;
+        content: "";
+        height: 0;
+        position: absolute;
+        top: 10%;
+        width: 0;
+        transform: rotate(-90deg);
+        left: -16px;
+      }
+    }
+    .tooltip-content {
+      li,
+      p {
+        font-size: 16px;
+        line-height: 30px;
+      }
+
+      li {
+        list-style-type: disc;
+      }
+
+      .join-course-btn {
+        color: $purpal;
+        font-weight: 600;
+        font-size: 16px;
+      }
+    }
+    .tooltip-main {
+      &:nth-child(3n) {
+        .tooltip-hover {
+          &:hover {
+            .tooltip-content {
+              background: $purpal;
+              margin-left: -50px;
+            }
+          }
+          .tooltip-content {
+            left: -260px;
+            &:before {
+              right: -16px;
+              left: auto;
+              transform: rotate(90deg);
+              border-bottom-color: $purpal;
+            }
+          }
+        }
+      }
+    }
+    .box1.tooltip-hover {
+      &:nth-child(even) {
+        &:hover {
+          .tooltip-content {
+            background: $pink-500;
+            &:before {
+              border-bottom-color: $pink-500;
+            }
+            .join-course-btn {
+              color: $pink-500;
+            }
+          }
+        }
+      }
+    }
+  }
+  .card-footer {
+    i {
+      color: $yellow-600;
+      font-size: 13px;
+    }
+    i.light {
+      color: rgba($color: $yellow-600, $alpha: 0.33);
+    }
+  }
+  span {
+    color: $gray-500;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .course-name {
+    font-size: 17px;
+    font-weight: bold;
+  }
+  .enrol_btn_text {
+    border-radius: 68px;
+    background: $cyan-500;
+    line-height: 29px;
+    font-size: 17px;
+    font-weight: 500;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .Course-component {
+    border-radius: 10px;
+    img {
+      border-radius: 10px;
+      height: 150px;
+    }
+  }
+  #couse-one {
+    display: inline-block;
+  }
+  .ccn-external-stars {
+    .list-inline-item {
+      &:not(:last-child) {
+        margin-right: 3px !important;
+      }
+    }
+  }
+}
+@media (max-width: 1349.98px) {
+  .featured-wrap {
+    ul {
+      &.featured-tab {
+        li {
+          padding: 5px 10px !important;
+          &::before {
+            width: 90%;
+          }
+          a {
+            font-size: 20px;
+            i {
+              font-size: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1199.98px) {
+  .featured-wrap {
+    .featured-main {
+      display: block !important;
+      .featured-tab,
+      .feature-work-area {
+        width: 100% !important;
+      }
+      .featured-tab {
+        li {
+          margin: 0 -4px 0 0;
+          display: inline-block !important;
+          width: auto !important;
+          border-radius: 0 !important;
+          height: auto;
+          padding: 10px 15px !important;
+          border: 1px solid $gray-500;
+          &::before {
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+          }
+          &.active {
+            border: 1px solid $red-500;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Grow ypur career with scert.
+.grow-career {
+  background: $yellow-400;
+  padding-bottom: 100px !important;
+  &::before {
+    background: $white;
+    box-shadow: -4.94138px -7.76503px 9.17686px rgba($color: $black, $alpha: 0.05);
+    border-radius: 1377.23px 0px 0px 141.182px;
+    width: 100%;
+    margin-left: 5%;
+    content: " ";
+    position: absolute;
+    height: calc(100% - 80px);
+  }
+  .left {
+    h2 {
+      span {
+        color: $red-500;
+      }
+      img {
+        width: auto !important;
+        margin: -40px 0 0;
+      }
+    }
+    img {
+      width: 80%;
+      margin-left: -15px;
+    }
+  }
+  .slide-box {
+    padding-top: 50px;
+  }
+  .carrer-box {
+    &::before {
+      background: url(../../../edumy/pix/grow_career/traning-img-shadow.png) no-repeat;
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      left: -67px;
+      z-index: 0;
+    }
+    &::after {
+      transform: skew(350deg, 0deg);
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      top: 0;
+      content: "";
+    }
+    .icons {
+      margin-bottom: 20px;
+      z-index: 1;
+      margin-left: 10px;
+      top: 14px;
+      height: 50px;
+      width: 50px;
+    }
+    h2 {
+      color: $blue-900;
+      z-index: 1;
+    }
+    h3 {
+      font-size: 37px;
+      line-height: 44px;
+      z-index: 1;
+      position: inherit;
+      z-index: 1;
+    }
+    p {
+      color: $blue-900;
+      z-index: 1;
+    }
+    .arrow-icon {
+      height: 25px;
+      width: 25px;
+      opacity: 0.3;
+      animation: linear infinite alternate;
+      animation-name: run;
+      animation-duration: 0.5s;
+      @-webkit-keyframes run {
+        from {
+          left: 0;
+          transform: translateX(0);
+        }
+        to {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+  .grow-01 {
+    &::after {
+      background-color: $pink-600;
+    }
+    h3 {
+      color: $pink-600;
+    }
+  }
+  .grow-02 {
+    &::after {
+      background-color: $blue;
+    }
+    h3 {
+      color: $blue;
+    }
+  }
+  .grow-03 {
+    &::after {
+      background-color: $teal-500;
+    }
+    h3 {
+      color: $teal-500;
+    }
+  }
+  .inprogress-containers {
+    width: 0px;
+    height: 475px;
+    left: 25%;
+    z-index: 2;
+    display: none;
+    transform: scaleX(1) skew(355deg, 0deg);
+    &::before {
+      content: "";
+      transform: skew(349deg, 0deg);
+      background: $pink-600;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    &::after {
+      background: url(../../../edumy/pix/grow_career/traning-img-shadow.png) no-repeat;
+      position: absolute;
+      background-size: 140px 100%;
+      content: "";
+      width: 100%;
+      height: 100%;
+      left: -63px;
+      top: -1px;
+      z-index: -1;
+      transform: skew(362deg, 0deg);
+    }
+    &.online-courses {
+      &::before {
+        background: $teal-500;
+      }
+      transform: scaleX(1) skew(355deg, 0deg);
+    }
+    &.online-trainging {
+      &::before {
+        background: $blue;
+      }
+      width: 900px;
+      display: block;
+      -webkit-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      -webkit-transition-timing-function: ease-out;
+      transition-timing-function: ease-out;
+      transform: scaleX(0) skew(355deg, 0deg);
+    }
+    .slide-work-area {
+      color: $white;
+      transform: scaleX(1) skew(365deg, 0deg);
+      h2 {
+        font-size: 38px;
+        line-height: 92px;
+        width: auto;
+      }
+      .header {
+        margin: 0px 20px 0 95px;
+      }
+      .close-slide {
+        width: 45px;
+        cursor: pointer;
+        right: -35px;
+        top: -30px;
+      }
+    }
+  }
+  @media (max-width: 767.98px) {
+    .carrer-box {
+      text-align: center;
+    }
+  }
+}
+
+// Benefits timeline.
+.view-timeline {
+  background: url(../../../edumy/pix/benefits_of_ttms/time-line-bg.jpg) no-repeat;
+  background-size: cover;
+  .benefit-ttms {
+    background: $cyan-500;
+    align-items: center;
+    h2 {
+      font-size: 3rem;
+    }
+    @media (max-width: 991.98px) {
+      h2 {
+        font-size: 2rem;
+      }
+    }
+  }
+  .timeline {
+    max-width: 1140px;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 2px;
+      background: $gray-400;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -1px;
+    }
+    .timeline-step {
+      &.left {
+        left: 0;
+      }
+      &.right {
+        left: 50%;
+        &::before {
+          left: 8px;
+        }
+        &::after {
+          left: -8px;
+        }
+        .content {
+          padding: 14px 45px 15px 90px;
+          border-radius: 0 500px 500px 0;
+          margin-left: 45px;
+          min-height: 95px;
+          display: flex;
+          align-items: center;
+          &::after {
+            left: -32px !important;
+            top: calc(50% - 37px);
+          }
+          img {
+            left: -23px !important;
+            top: calc(50% - 25px);
+          }
+        }
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        width: 50px;
+        height: 2px;
+        top: calc(50% - 1px);
+        right: 8px;
+        z-index: 1;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        top: calc(50% - 8px);
+        right: -8px;
+        border-radius: 16px;
+        z-index: 1;
+      }
+      .content {
+        padding: 14px 90px 15px 45px;
+        border-radius: 500px 0 0 500px;
+        margin-right: 45px;
+        min-height: 95px;
+        display: flex;
+        align-items: center;
+        &::after {
+          content: "";
+          width: 75px;
+          height: 75px;
+          border-radius: 10px;
+          right: -34px;
+          top: calc(50% - 37px);
+          transform: rotate(45deg);
+          position: absolute !important;
+        }
+        p {
+          font-size: 16px;
+          line-height: 22px;
+          color: $black;
+        }
+        img {
+          position: absolute;
+          right: -22px;
+          z-index: 1;
+          top: calc(50% - 24px);
+          height: 53px;
+        }
+      }
+    }
+    .icon1 {
+      &::before,
+      &::after {
+        background: $pink-600;
+      }
+      .content {
+        &::after {
+          background: $pink-600;
+        }
+      }
+    }
+    .icon2 {
+      &::before,
+      &::after {
+        background: $yellow-400;
+      }
+      .content {
+        &::after {
+          background: $yellow-400;
+        }
+      }
+    }
+    .icon3 {
+      &::before,
+      &::after {
+        background: $purpal;
+      }
+      .content {
+        &::after {
+          background: $purpal;
+        }
+      }
+    }
+  }
+  .icon4 {
+    &::before,
+    &::after {
+      background: $teal-500;
+    }
+    .content {
+      &::after {
+        background: $teal-500;
+      }
+    }
+  }
+  .icon5 {
+    &::before,
+    &::after {
+      background: $blue;
+    }
+    .content {
+      &::after {
+        background: $blue;
+      }
+    }
+  }
+  .icon6 {
+    &::before,
+    &::after {
+      background: $red-600;
+    }
+    .content {
+      &::after {
+        background: $red-600;
+      }
+    }
+  }
+}
+@media (max-width: 991.98px) {
+  .view-timeline {
+    .timeline {
+      &::after {
+        left: 50px;
+      }
+      .left,
+      .right {
+        &::before {
+          left: 33px;
+        }
+        &::after {
+          left: 26px;
+          border-color: transparent $green-800 transparent transparent;
+        }
+        .content {
+          padding: 14px 25px 15px 60px !important;
+          border-radius: 0 500px 500px 0;
+          margin-left: 80px;
+          min-height: 95px;
+          width: calc(100% - 60px);
+        }
+      }
+      .timeline-step {
+        width: 100% !important;
+        padding-left: 120px;
+        padding-right: 30px;
+        .content {
+          &::after {
+            left: -33px;
+          }
+          img {
+            left: -22px;
+          }
+        }
+        &.right {
+          &::before {
+            left: 8px;
+          }
+          left: 33px;
+        }
+      }
+    }
+  }
+}
+
+// Choose training block.
+.choose-training-wrap {
+  box-shadow: none;
+  h1 {
+    color: $gray-800;
+  }
+  .col-lg-6 {
+    &:first-child {
+      img {
+        margin-bottom: 3px;
+      }
+      h2 {
+        color: $cyan-500;
+      }
+      .content-box {
+        background-color: $cyan-500;
+        a {
+          color: $cyan-500;
+        }
+      }
+      &::after {
+        content: "";
+        width: 1px;
+        position: absolute;
+        top: 50px;
+        bottom: 0;
+        right: 0;
+        box-shadow: 2px 0px 2px rgba($color: $black, $alpha: 0.1);
+      }
+    }
+    &:last-child {
+      h2 {
+        color: $red-500;
+      }
+      .online-training-box.content-box {
+        background-color: $red-500;
+        a {
+          color: $red-500;
+        }
+      }
+    }
+  }
+}
+
+// Main header.
+.header_user_notif {
+  li {
+    .dropdown {
+      .notification_icon {
+        background-color: $red-500;
+      }
+    }
+  }
+}
+
+// The below css for scrollbar throughout the portal.
+::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+::-webkit-scrollbar-track {
+  background: $gray-400;
+  border: 1px solid $gray-500;
+  border-radius: 0.6rem;
+}
+::-webkit-scrollbar-thumb {
+  background: $gray-600;
+  border-radius: 0.6rem;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: $gray-700;
+}

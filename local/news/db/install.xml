@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="local/news/db" VERSION="2023032000" COMMENT="XMLDB file for news management plugin"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd">
+    <TABLES>
+        <TABLE NAME="local_news" COMMENT="News data">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="11" NOTNULL="true" SEQUENCE="true"/>
+
+                <FIELD NAME="title" TYPE="text" NOTNULL="true" SEQUENCE="false" COMMENT="To be used for title text."/>
+                <FIELD NAME="description" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+                <FIELD NAME="schoolid" TYPE="int" LENGTH="11" NOTNULL="false" SEQUENCE="false"/>
+                <FIELD NAME="approved" TYPE="int" LENGTH="1" NOTNULL="false" DEFAULT="0" SEQUENCE="false" COMMENT="0 = not approved 1 = approved"/>
+                <FIELD NAME="datefrom" TYPE="int" LENGTH="11" NOTNULL="true" SEQUENCE="false" COMMENT="From when the news should be displayed."/>
+                <FIELD NAME="dateto" TYPE="int" LENGTH="11" NOTNULL="true" SEQUENCE="false" COMMENT="Until when the news will be displayed."/>
+                <FIELD NAME="deleted" TYPE="int" LENGTH="2" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+                <FIELD NAME="createdby" TYPE="int" LENGTH="11" NOTNULL="true" SEQUENCE="false"/>
+                <FIELD NAME="updatedby" TYPE="int" LENGTH="11" NOTNULL="true" SEQUENCE="false"/>
+                <FIELD NAME="deletedby" TYPE="int" LENGTH="11" NOTNULL="false"  SEQUENCE="false"/>
+                <FIELD NAME="timecreated" TYPE="int" LENGTH="11" NOTNULL="true" SEQUENCE="false"/>
+                <FIELD NAME="timemodified" TYPE="int" LENGTH="11" NOTNULL="true" SEQUENCE="false"/>
+                <FIELD NAME="timedeleted" TYPE="int" LENGTH="11" NOTNULL="false"  SEQUENCE="false"/>
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+            </KEYS>
+        </TABLE>
+    </TABLES>
+</XMLDB>

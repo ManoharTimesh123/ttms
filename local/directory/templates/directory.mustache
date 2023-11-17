@@ -1,0 +1,22 @@
+<input class="d-inline-block form-control mb-2 w-auto border pl-2 mr-1" type='text' id='directory-search-field' placeholder="Search here ...">
+<input class="btn-primary" type ='button' id='search-directory' value="Search">
+<div class="table-responsive">
+<table class="table generaltable directory-page-table" >
+  <thead>
+    <tr>
+        {{#headers}}
+            {{{headers}}}
+        {{/headers}}
+    </tr>
+  </thead>
+<tbody>
+    {{#content}}
+        <tr class="table-row">
+            {{#data}}
+                {{{data}}}
+            {{/data}}
+        </tr>
+    {{/content}}
+</tbody>
+</table>
+</div>

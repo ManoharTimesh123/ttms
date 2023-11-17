@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="local/batching/db" VERSION="20180105" COMMENT="XMLDB file for Moodle local/batching"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="local_batching" COMMENT="List of master batching record, we will have many related table after this.">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" />
+        <FIELD NAME="name" TYPE="char" LENGTH="225" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="course" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="diet_heads" TYPE="char" LENGTH="100" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="nodal_officers" TYPE="char" LENGTH="100" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="proposal_file" TYPE="char" LENGTH="255" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="circular_file" TYPE="char" LENGTH="255" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="comment" TYPE="text"  NOTNULL="false"  SEQUENCE="false"/>
+        <FIELD NAME="file_number" TYPE="char" LENGTH="255"  NOTNULL="false"  SEQUENCE="false"/>
+        <FIELD NAME="status" TYPE="char" LENGTH="225" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false" />
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="createdby" TYPE="int" LENGTH="10" NOTNULL="false" UNSIGNED="true" DEFAULT="0" SEQUENCE="false"  />
+        <FIELD NAME="updatedby" TYPE="int" LENGTH="10" NOTNULL="false" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" />
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="id" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="local_batching_filters" COMMENT="List of filters used for batching.">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" />
+        <FIELD NAME="batching" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="name" TYPE="char" LENGTH="225" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="value" TYPE="char" LENGTH="225" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="usercreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="usermodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
+        <FIELD NAME="timecreated"  TYPE="int" LENGTH="10"  NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="id" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="local_batching_venue" COMMENT="List of venues used for batching.">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" />
+        <FIELD NAME="batching" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="school" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="status" TYPE="char" LENGTH="225" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="usercreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="usermodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
+        <FIELD NAME="timecreated"  TYPE="int" LENGTH="10"  NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="id" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="local_batching_cycles" COMMENT="List of cycles used for batching.">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" />
+        <FIELD NAME="code" TYPE="char" LENGTH="225" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="batching" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="status" TYPE="char" LENGTH="225" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="usercreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="usermodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
+        <FIELD NAME="timecreated"  TYPE="int" LENGTH="10"  NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="id" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="local_batching_batches" COMMENT="List of batches used for batching.">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" />
+        <FIELD NAME="code" TYPE="char" LENGTH="225" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="batching" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="cycle" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="status" TYPE="char" LENGTH="225" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="usercreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="usermodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
+        <FIELD NAME="timecreated"  TYPE="int" LENGTH="10"  NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="id" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="local_batching_participants" COMMENT="List of participants for a used for batching.">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" />
+        <FIELD NAME="batching" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="user" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="batch" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="usercreated" TYPE="int" LENGTH="10" NOTNULL="true"  SEQUENCE="false"/>
+        <FIELD NAME="usermodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="id" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="local_batching_temp_users" COMMENT="List of temp users to be used batching.">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" />
+        <FIELD NAME="batching" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="school" TYPE="char" LENGTH="225" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="user" TYPE="char" LENGTH="225" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="id" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="local_batching_financials" COMMENT="List of financials used for batching.">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" />
+        <FIELD NAME="batching" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="category" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="proposallog" TYPE="int" LENGTH="10" NOTNULL="false" DEFAULT="null" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="title" TYPE="text" LENGTH="225" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="cost" TYPE="char" LENGTH="225" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="unit" TYPE="char" LENGTH="225" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="usercreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="usermodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
+        <FIELD NAME="timecreated"  TYPE="int" LENGTH="10"  NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="id" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="local_batching_proposals" COMMENT="List of proposals used for batching.">
+    <FIELDS>
+      <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" />
+      <FIELD NAME="batching" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+      <FIELD NAME="name" TYPE="char" LENGTH="225" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+      <FIELD NAME="status" TYPE="char" LENGTH="225" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+      <FIELD NAME="usercreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      <FIELD NAME="usermodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
+      <FIELD NAME="timecreated"  TYPE="int" LENGTH="10"  NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+    </FIELDS>
+    <KEYS>
+      <KEY NAME="id" TYPE="primary" FIELDS="id"/>
+    </KEYS>
+  </TABLE>
+   <TABLE NAME="local_batching_facilitators" COMMENT="Batching facilitators.">
+    <FIELDS>
+      <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" />
+      <FIELD NAME="batching" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+      <FIELD NAME="user" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+      <FIELD NAME="batch" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+      <FIELD NAME="usercreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      <FIELD NAME="usermodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
+      <FIELD NAME="timecreated"  TYPE="int" LENGTH="10"  NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+    </FIELDS>
+    <KEYS>
+      <KEY NAME="id" TYPE="primary" FIELDS="id"/>
+    </KEYS>
+  </TABLE>
+   <TABLE NAME="local_batching_coordinators" COMMENT="Batching coordinators.">
+    <FIELDS>
+      <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" />
+      <FIELD NAME="batching" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+      <FIELD NAME="user" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+      <FIELD NAME="batch" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+      <FIELD NAME="usercreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      <FIELD NAME="usermodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
+      <FIELD NAME="timecreated"  TYPE="int" LENGTH="10"  NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+    </FIELDS>
+    <KEYS>
+      <KEY NAME="id" TYPE="primary" FIELDS="id"/>
+    </KEYS>
+  </TABLE>
+   <TABLE NAME="local_batching_observers" COMMENT="Batching observers.">
+    <FIELDS>
+      <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" />
+      <FIELD NAME="batching" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+      <FIELD NAME="user" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+      <FIELD NAME="batch" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+      <FIELD NAME="usercreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      <FIELD NAME="usermodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
+      <FIELD NAME="timecreated"  TYPE="int" LENGTH="10"  NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+    </FIELDS>
+    <KEYS>
+      <KEY NAME="id" TYPE="primary" FIELDS="id"/>
+    </KEYS>
+  </TABLE>
+   <TABLE NAME="local_batching_venue_final" COMMENT="Batching venue final.">
+    <FIELDS>
+      <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" />
+      <FIELD NAME="batchingvenueid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+      <FIELD NAME="user" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+      <FIELD NAME="batch" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+      <FIELD NAME="usercreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      <FIELD NAME="usermodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
+      <FIELD NAME="timecreated"  TYPE="int" LENGTH="10"  NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+    </FIELDS>
+    <KEYS>
+      <KEY NAME="id" TYPE="primary" FIELDS="id"/>
+    </KEYS>
+  </TABLE>
+  <TABLE NAME="local_batching_cycle_times" COMMENT="Batching cycle times.">
+    <FIELDS>
+      <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" />
+      <FIELD NAME="cycle" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+      <FIELD NAME="starttime" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+      <FIELD NAME="endtime" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+      <FIELD NAME="usercreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      <FIELD NAME="usermodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
+      <FIELD NAME="timecreated"  TYPE="int" LENGTH="10"  NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+    </FIELDS>
+    <KEYS>
+      <KEY NAME="id" TYPE="primary" FIELDS="id"/>
+    </KEYS>
+  </TABLE>
+  <TABLE NAME="local_financial_categories" COMMENT="Financial categories.">
+    <FIELDS>
+      <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" />
+      <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+      <FIELD NAME="code" TYPE="char" LENGTH="50" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+      <FIELD NAME="usercreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      <FIELD NAME="usermodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
+      <FIELD NAME="timecreated"  TYPE="int" LENGTH="10"  NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+    </FIELDS>
+    <KEYS>
+      <KEY NAME="id" TYPE="primary" FIELDS="id"/>
+    </KEYS>
+  </TABLE>
+  <TABLE NAME="local_financial_details" COMMENT="Financial details.">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" />
+        <FIELD NAME="category" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="grade" TYPE="int" LENGTH="10" NOTNULL="false" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="lunchtype" TYPE="int" LENGTH="10" NOTNULL="false" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="dependanton" TYPE="char" LENGTH="255" NOTNULL="false" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="fromvalue" TYPE="char" LENGTH="255" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="tovalue" TYPE="char" LENGTH="255" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="value" TYPE="char" LENGTH="255" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="usercreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="usermodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
+        <FIELD NAME="timecreated"  TYPE="int" LENGTH="10"  NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="id" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+  </TABLE>
+  <TABLE NAME="local_financial_grades" COMMENT="Financial grades.">
+    <FIELDS>
+      <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" />
+      <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+      <FIELD NAME="code" TYPE="char" LENGTH="50" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+      <FIELD NAME="usercreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      <FIELD NAME="usermodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
+      <FIELD NAME="timecreated"  TYPE="int" LENGTH="10"  NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+    </FIELDS>
+    <KEYS>
+      <KEY NAME="id" TYPE="primary" FIELDS="id"/>
+    </KEYS>
+  </TABLE>
+  <TABLE NAME="local_financial_dependents" COMMENT="Financial dependents.">
+    <FIELDS>
+      <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" />
+      <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+      <FIELD NAME="code" TYPE="char" LENGTH="50" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+      <FIELD NAME="usercreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      <FIELD NAME="usermodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
+      <FIELD NAME="timecreated"  TYPE="int" LENGTH="10"  NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+    </FIELDS>
+    <KEYS>
+      <KEY NAME="id" TYPE="primary" FIELDS="id"/>
+    </KEYS>
+  </TABLE>
+  <TABLE NAME="local_batching_logs" COMMENT="Batching logs.">
+    <FIELDS>
+      <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" />
+      <FIELD NAME="batching" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+      <FIELD NAME="name" TYPE="char" LENGTH="225" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+      <FIELD NAME="course" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+      <FIELD NAME="diet_heads" TYPE="char" LENGTH="100" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+      <FIELD NAME="nodal_officers" TYPE="char" LENGTH="100" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+      <FIELD NAME="proposal_file" TYPE="char" LENGTH="255" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+      <FIELD NAME="circular_file" TYPE="char" LENGTH="255" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+      <FIELD NAME="comment" TYPE="text"  NOTNULL="false"  SEQUENCE="false"/>
+      <FIELD NAME="file_number" TYPE="char" LENGTH="255"  NOTNULL="false"  SEQUENCE="false"/>
+      <FIELD NAME="status" TYPE="char" LENGTH="225" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+      <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false" />
+      <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false"/>
+      <FIELD NAME="createdby" TYPE="int" LENGTH="10" NOTNULL="false" UNSIGNED="true" DEFAULT="0" SEQUENCE="false"  />
+      <FIELD NAME="updatedby" TYPE="int" LENGTH="10" NOTNULL="false" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" />
+    </FIELDS>
+    <KEYS>
+      <KEY NAME="id" TYPE="primary" FIELDS="id"/>
+    </KEYS>
+  </TABLE>
+    <TABLE NAME="local_batching_proposal_logs" COMMENT="Batching proposal logs.">
+    <FIELDS>
+      <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" />
+      <FIELD NAME="batching" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+      <FIELD NAME="type" TYPE="char" LENGTH="225" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+      <FIELD NAME="status" TYPE="char" LENGTH="255" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+      <FIELD NAME="file" TYPE="char" LENGTH="255" NOTNULL="false"  UNSIGNED="true" SEQUENCE="false"/>
+      <FIELD NAME="usercreated" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+      <FIELD NAME="usermodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
+      <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" />
+      <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+    </FIELDS>
+    <KEYS>
+      <KEY NAME="id" TYPE="primary" FIELDS="id"/>
+    </KEYS>
+  </TABLE>
+  <TABLE NAME="local_financial_lunch_types" COMMENT="Financial grades.">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" />
+        <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="code" TYPE="char" LENGTH="50" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+        <FIELD NAME="usercreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="usermodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
+        <FIELD NAME="timecreated"  TYPE="int" LENGTH="10"  NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="id" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+  </TABLE>
+  </TABLES>
+</XMLDB>

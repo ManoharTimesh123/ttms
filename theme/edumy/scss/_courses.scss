@@ -1,0 +1,113 @@
+.top_courses_wrapper {
+  .top_courses_content {
+    p {
+      color: $red-600;
+    }
+  }
+  i {
+    &.fa-user {
+      color: $gray-600;
+    }
+  }
+  .top_courses_img {
+    height: 150px;
+
+    img {
+      object-fit: cover;
+    }
+  }
+  .course-join-btn {
+    border-radius: 0 0 8px 8px;
+    background-image: linear-gradient(to top, rgba($color: $blue, $alpha: 0.8), rgba($color: $purpal, $alpha: 0.8));
+    color: $white;
+    position: absolute;
+    opacity: 0;
+    bottom: 0;
+    height: 0;
+    transition: all 0.5s ease-in-out;
+    span {
+      border: 2px solid;
+      border-radius: 50px;
+      font-size: 16px;
+    }
+    &:hover {
+      span {
+        background-color: #fff;
+        color: $red-600;
+      }
+    }
+  }
+  &:hover {
+    .course-join-btn {
+      height: 100%;
+      opacity: 1;
+    }
+  }
+}
+.nodata_found {
+  background: #fdfdfd;
+
+  h2 {
+    color: #ce3d7f;
+  }
+}
+
+.category_list_items {
+  background: #fff;
+  li {
+    padding: 0;
+    margin: 3px 0;
+    position: relative;
+    &::before {
+      content: "";
+      width: 0;
+      transition: all 0.3s ease-in-out;
+      background-color: rgba($color: $red-600, $alpha: 0.1);
+      left: 0;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+    }
+    &:hover {
+      ul {
+        li {
+          a {
+            color: $blue-800 !important;
+          }
+        }
+      }
+      &::before {
+        width: 100%;
+      }
+    }
+    a {
+      font-size: 16px;
+      font-weight: 500;
+      padding: 10px 15px;
+      position: relative;
+      display: block;
+      z-index: 1;
+      transition: all 0.3s ease-in-out;
+      color: $gray-700 !important;
+
+      &.active {
+        background-color: rgba($color: $red-600, $alpha: 0.1);
+        border-left: 7px $red-600 solid;
+        color: $black !important;
+      }
+    }
+    ul {
+      padding-left: 15px;
+      background-color: $white;
+      position: relative;
+      li {
+        &::before {
+          display: none;
+        }
+        a {
+          color: $blue-800;
+        }
+      }
+    }
+  }
+}

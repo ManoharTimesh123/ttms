@@ -1,0 +1,39 @@
+{{#notloggedin}}
+<!-- INTG Customziation : Adding multiple role login option -->
+  <ul class="header_user_notif ccn-frontend-header_user_notif pull-right dn-smd">
+    <li class="user_setting">
+      {{#header_login_popup}}
+      <div class="dropdown">
+
+      <!-- INTG Customziation Start: Show user popup based on the below condition -->
+        {{#showloginurl}}
+            <a class="btn  ccn-profile-menu flaticon-user" href="{{{ config.wwwroot }}}/login/index.php">{{#str}}login_register, theme_edumy{{/str}}</a>
+        {{/showloginurl}}
+
+        {{^showloginurl}}
+            <a class="btn dropdown-toggle ccn-profile-menu flaticon-user" href="#" data-toggle="dropdown" aria-expanded="false">{{#str}}login_register, theme_edumy{{/str}}</a>
+        {{/showloginurl}}
+      <!-- INTG Customziation End -->
+
+        <div class="dropdown-menu" x-placement="top-start" style="position: absolute; transform: translate3d(-9px, -5px, 0px); top: 0px; left: 0px; will-change: transform;">
+          <div class="user_setting_content">
+                <a class="dropdown-item flaticon-user" href="#" data-toggle="modal" data-target="#exampleModalCenter">
+                  {{#str}}officials, theme_edumy{{/str}}
+                </a>
+                <a class="dropdown-item flaticon-user" href="#" data-toggle="modal" data-target="#exampleModalCenter">
+                    {{#str}}director, theme_edumy{{/str}}
+                </a>
+                <a class="dropdown-item flaticon-user" href="#" data-toggle="modal" data-target="#exampleModalCenter"> 
+                    {{#str}}teachers, theme_edumy{{/str}}
+                </a>
+           </div>
+        </div>
+      </div>
+      {{/header_login_popup}}
+      {{#header_login_link}}
+        <a href="{{{ config.wwwroot }}}/login" class="btn flaticon-user"> <span class="dn-lg">{{#str}}login_register, theme_edumy{{/str}}</span></a>
+      {{/header_login_link}}
+    </li>
+  </ul>
+  <!-- INTG Customization End -->
+{{/notloggedin}}

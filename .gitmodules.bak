@@ -1,0 +1,8 @@
+[submodule "auth/oidc"]
+	path = auth/oidc
+	url = git@github.com:microsoft/moodle-auth_oidc.git
+	tag = v3.11.3
+[submodule "local/o365"]
+	path = local/o365
+	url = git@github.com:microsoft/moodle-local_o365.git
+	tag = v3.11.3

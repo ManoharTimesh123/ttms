@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+  <XMLDB PATH="local/profile_management/db" VERSION="2023050102" COMMENT="XMLDB file for Moodle local/profile_management">
+    <TABLES>
+      <TABLE NAME="local_user_profile_details" COMMENT="Default comment for local_user_profile_details, please edit me">
+        <FIELDS>
+			<FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" />
+			<FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
+			<FIELD NAME="changeditem" TYPE="char" LENGTH="100" NOTNULL="false" UNSIGNED="true" DEFAULT="" SEQUENCE="false"/>
+			<FIELD NAME="itemvalue" TYPE="char" LENGTH="50" NOTNULL="false" UNSIGNED="true" DEFAULT="" SEQUENCE="false"/>
+			<FIELD NAME="fromdate" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false" DEFAULT="0" />
+			<FIELD NAME="todate" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false" DEFAULT="0" />
+            <FIELD NAME="deleted" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+			<FIELD NAME="usermodified" TYPE="int" LENGTH="10" NOTNULL="false" UNSIGNED="true" DEFAULT="0" SEQUENCE="false"/>
+            <FIELD NAME="userdeleted" TYPE="int" LENGTH="10" NOTNULL="false" UNSIGNED="true" DEFAULT="0" SEQUENCE="false"/>
+			<FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false" DEFAULT="0" />
+			<FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false" DEFAULT="0" />
+        </FIELDS>
+        <KEYS>
+          <KEY NAME="primary" TYPE="primary" FIELDS="id" />
+        </KEYS>
+      </TABLE>
+    </TABLES>
+  </XMLDB>

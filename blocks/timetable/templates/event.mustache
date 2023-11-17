@@ -1,0 +1,63 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+   @templateblock_timetable/event
+
+    Event view for blocks.
+
+    The purpose of this template is to render the timetbale view for blocks.
+
+    Classes required for JS:
+    * none
+
+    Data attributes required for JS:
+    * none
+
+    Example context (json):
+    {
+    }
+}}
+    {{! INTG Customization Start : Append personal traning calender block data }}
+    {{#personaltrainingcalendertabledata}}
+        <div class="item event-item">
+            <div
+                class="event clearfix"                
+                data-region="event-item"
+            >
+            <div class="card-text content calendarwrapper" >
+                    {{#training_name}}<span class="coursename">{{{training_name}}}</span><br/>{{/training_name}}
+                    <a
+                        data-type="event"
+                        data-action="view-event"
+                        href="#"
+                        class="timetable-event"
+                    >{{{training_type}}}</a><br/>
+                    <br/><b>Start date : </b>{{{start_date}}}
+                    <br/><b>End date : </b>{{{end_date}}}
+                    <br/><b>No of days : </b>{{{no_of_days}}}
+                    <br/><b>Traning days : </b>{{{traning_days}}}
+                    <br/><b>About training : </b>{{{about_training}}}
+                    <br/><b>Training venue : </b>{{{training_venue}}}
+                    <br/><b>Cycle batchid : </b>{{{cycle_batchid}}}
+                    <br/><b>Status : </b>{{{status}}}
+                    <br/><b>Facilitator : </b>{{{facilitator}}}
+                    <br/><b>Coordinator : </b>{{{coordinator}}}
+            </div>
+            </div>
+        </div>
+    {{/personaltrainingcalendertabledata}}
+    {{! INTG Customization End }}

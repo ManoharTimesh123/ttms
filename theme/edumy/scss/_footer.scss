@@ -1,0 +1,191 @@
+footer {
+    margin-top: 150px;
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        height: 120%;
+        top: 0;
+        right: 31px;
+        left: 22px;
+        z-index: -1;
+        transform: rotate(354deg);
+        border-radius: 70px;
+    }
+    &::before {
+        background: $white;
+    }
+    &::after {
+        background: rgba($color: $red-500, $alpha: 0.3);
+    }
+    .container {
+        &::before {
+            content: "";
+            position: absolute;
+            background: url(/theme/edumy/pix/reception.svg) no-repeat;
+            background-size: auto 160px;
+            left: 0;
+            bottom: 0;
+            width: 160px;
+            height: 160px;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            background: url(/theme/edumy/pix/teaching.svg) no-repeat;
+            background-size: auto 160px;
+            background-position: right bottom;
+            right: 0;
+            bottom: 0;
+            width: 300px;
+            height: 160px;
+        }
+    }
+    .girls-reading {
+        margin-top: -172px;
+        transform: rotate(3deg);
+    }
+    .frame-yellow-arrow {
+        margin-top: -42px;
+        margin-bottom: -88px;
+        width: 70%;
+    }
+    h2 {
+        font-size: 45px;
+        color: $blue-800;
+        line-height: 53px;
+        span {
+            color: $red-500;
+        }
+    }
+    h4 {
+        color: $blue-800;
+    }
+    .footer-logo {
+        height: 65px;
+    }
+    ul {
+        &.nav {
+            li {
+                a {
+                    color: $blue-800;
+                }
+            }
+        }
+    }
+    ul {
+        &.nav {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            li {
+                margin-bottom: 4px;
+            }
+        }
+    }
+    form {
+        background: rgba($color: $white, $alpha: 0.2);
+        padding: 10px 15px 1px 15px;
+        border-radius: 8px;
+        box-shadow: 0 0.125rem 0.25rem rgba($color: $black, $alpha: 0.1);
+        .form-group {
+            margin-bottom: 0.8rem;
+            label {
+                margin-bottom: 0;
+            }
+            textarea,
+            input {
+                resize: none;
+                padding: 5px 10px !important;
+                border: none;
+            }
+        }
+    }
+    p {
+        font-weight: 500;
+        color: $blue-800;
+    }
+    .footer-social-icons {
+        ul {
+            list-style: none;
+            li {
+                width: 40px;
+                height: 40px;
+                background: $gray-300;
+                line-height: 42px;
+                font-size: 18px;
+                display: inline-block;
+                margin: 0 10px 10px 0;
+                border-radius: 100px;
+                text-align: center;
+                a {
+                    i {
+                        color: $blue-500;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 1349.98px) {
+        .girls-reading {
+            margin-top: -150px;
+        }
+        .frame-yellow-arrow {
+            margin-top: -35px;
+        }
+    }
+    @media (max-width: 1199.98px) {
+        .girls-reading {
+            margin-top: -180px;
+            transform: rotate(10deg);
+        }
+        .frame-yellow-arrow {
+            margin-top: -50px;
+        }
+        &::before,
+        &::after {
+            transform: rotate(0deg);
+        }
+        .container {
+            &::before,
+            &::after {
+                background-size: auto 100px;
+                height: 100px;
+            }
+        }
+    }
+    @media (max-width: 991.98px) {
+        &::before,
+        &::after {
+            left: 0;
+            right: 0;
+        }
+        .girls-reading {
+            margin-top: -150px;
+            transform: rotate(10deg);
+        }
+        .frame-yellow-arrow {
+            margin-top: -42px;
+        }
+        .container {
+            &::before,
+            &::after {
+                content: none;
+            }
+        }
+    }
+    @media (max-width: 767.98px) {
+        .girls-reading {
+            margin-top: -285px;
+        }
+    }
+}
+.footer_one {
+    display: none;
+}
+.footer_bottom_area {
+    display: none;
+    p {
+        color: $gray-700;
+    }
+}

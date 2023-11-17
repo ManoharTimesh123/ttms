@@ -1,0 +1,215 @@
+// Left side menu.
+.dashboard_sidebar {
+  width: 50px;
+  transition: all 0.5s ease-in-out;
+  min-height: auto !important;
+  &.show {
+    width: 280px;
+  }
+  .ccnDashBlCt {
+    padding: 0;
+  }
+  .ccnDashBl {
+    box-shadow: none;
+  }
+  .left-side-menu {
+    .list-group-item {
+      padding: 0;
+      a {
+        position: relative;
+        padding: 6px 15px;
+        transition: all 0.3s ease-in-out;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        &::before {
+          content: "";
+          width: 0;
+          transition: all 0.3s ease-in-out;
+          background-color: $red-600;
+          left: 0;
+          position: absolute;
+          top: 0;
+          z-index: -1;
+          bottom: 0;
+        }
+        &:hover {
+          &::before {
+            width: 100%;
+          }
+          color: $white;
+        }
+        i {
+          font-size: 24px;
+          font-weight: 700;
+          margin-right: 12px !important;
+        }
+        &.active {
+          background-color: $red-600;
+          color: $white;
+        }
+      }
+      .dropdown-toggle {
+        &::after {
+          right: 20px;
+          position: absolute;
+        }
+      }
+      ul {
+        li {
+          a {
+            padding-left: 52px;
+          }
+        }
+      }
+    }
+  }
+  .left-menu-toggle-desktop {
+    background: $blue-800;
+    font-size: 1.2rem;
+    z-index: 1;
+    position: absolute;
+    bottom: 48px;
+    width: 100%;
+    white-space: nowrap;
+    font-size: 14px;
+    padding-left: 20px !important;
+    overflow: hidden;
+    padding: 5px;
+    color: $white !important;
+    text-align: center;
+    cursor: pointer;
+    i {
+      float: left;
+      margin-right: 16px;
+    }
+  }
+}
+.dashboard_main_content {
+  padding-left: calc(50px + 20px);
+  transition: all 0.5s ease-in-out;
+  &.show {
+    padding-left: calc(280px + 20px);
+  }
+}
+@media screen and (max-width: 1440px) {
+  .dashboard_main_content:not(.no-sidebar) {
+    padding-left: calc(50px + 20px);
+    &.show {
+      padding-left: calc(280px + 20px);
+    }
+  }
+}
+.dashboard_sidebars {
+  height: 100%;
+  position: relative;
+  .user_board {
+    overflow: auto;
+    height: 100%;
+    padding-bottom: 50px;
+    position: relative;
+    .pl-0.pr-2 {
+      padding-right: 0px !important;
+    }
+  }
+}
+.ccn_context_dashboard {
+  .wrapper {
+    .dashboard_sidebar {
+      &.ccn_dashboard_scroll_drawer {
+        position: fixed !important;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1199.98px) {
+  .left-menu-toggle {
+    background: $red-600;
+    font-size: 1.2rem;
+    z-index: 1;
+    position: relative;
+  }
+  .dashboard_sidebar {
+    transition: all 0.5s ease-in-out;
+    display: block;
+    width: 0 !important;
+    overflow-x: hidden;
+    &.show {
+      width: 280px !important;
+    }
+    .left-side-menu-heading {
+      margin-top: 1.5rem;
+    }
+  }
+  .mobile-menu {
+    position: fixed;
+    width: 100%;
+    top: 0;
+  }
+  .dashboard_sidebars {
+    padding-top: 20px;
+  }
+  .left-menu-toggle-desktop {
+    display: none;
+  }
+}
+.stylehome1 .mm-navbar {
+  background: $red-600;
+}
+.stylehome1 .mm-panel {
+  background: $blue-800;
+}
+// Collapse menu.
+.collapse-menu {
+  .user_board {
+    overflow: inherit;
+  }
+  .list-group-item {
+    white-space: nowrap;
+    a {
+      border-radius: 0 5px 5px 0;
+    }
+    .dropdown-toggle {
+      border-radius: 0 5px 0 0;
+      &::after {
+        content: none;
+      }
+    }
+    ul {
+      position: absolute;
+      top: 51px;
+      left: 50px;
+      display: none;
+    }
+    &:hover {
+      a {
+        background-color: $red-600;
+        width: 100%;
+        color: $white;
+        &:hover {
+          color: $black;
+        }
+      }
+      ul {
+        display: block;
+        max-height: 105px;
+        overflow-y: auto;
+        li {
+          a {
+            padding-left: 15px;
+            width: 210px;
+            border-radius: 0;
+          }
+          &:last-child {
+            a {
+              border-radius: 0 0 5px 0;
+            }
+          }
+        }
+      }
+    }
+    &:hover {
+      width: 260px;
+    }
+  }
+}
